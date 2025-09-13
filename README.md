@@ -95,14 +95,6 @@ Mobile order (top → bottom): Get in Touch → Location → Form
 
 ## 📸 Screenshots (optional)
 
-Add your screenshots to an assets/ folder and reference them here:
-
-- Light mode
-  - ![Light mode screenshot](assets/screenshot-light.png)
-- Dark mode
-  - ![Dark mode screenshot](assets/screenshot-dark.png)
-- Mobile view
-  - ![Mobile screenshot](assets/screenshot-mobile.png)
 
 ## 📦 Deployment
 
