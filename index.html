@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Contact us for inquiries, support, and feedback. We usually respond within 1 business day." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>Contact Us</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+  <!-- Normalize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+
+  <!-- App Styles -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <i class="fas fa-comments"></i>
+      <span>Contact Us</span>
+    </div>
+    <button id="themeToggle" class="icon-button" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <i class="fas fa-moon"></i>
+    </button>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">We’d love to hear from you</h1>
+    <p class="subtitle">Reach out for support, partnership, or general inquiries. We typically respond within 1 business day.</p>
+
+    <section class="contact-wrapper">
+      <!-- Left column: Get in Touch (row 1) -->
+      <aside class="contact-info card">
+        <h2>Get in Touch</h2>
+        <div class="info-item"><i class="fas fa-map-marker-alt"></i><span>123 Street, New Delhi, India</span></div>
+        <div class="info-item"><i class="fas fa-phone"></i><a href="tel:+919876543210">+91 98765 43210</a></div>
+        <div class="info-item"><i class="fas fa-envelope"></i><a href="mailto:info@example.com">info@example.com</a></div>
+
+        <div class="divider"></div>
+
+        <div class="hours">
+          <h3>Business Hours</h3>
+          <ul>
+            <li><span>Mon–Fri</span><span>09:00–18:00 IST</span></li>
+            <li><span>Sat</span><span>10:00–14:00 IST</span></li>
+            <li><span>Sun</span><span>Closed</span></li>
+          </ul>
+        </div>
+
+        <div class="social">
+          <a href="#" aria-label="Follow on Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Follow on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Like on Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+      </aside>
+
+      <!-- Left column: Location (row 2) -->
+      <section class="map card" aria-label="Location">
+        <h2>Location</h2>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14014.491210075404!2d77.2090211!3d28.6139391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b4b34b8c3%3A0xbfcf9c22cf5b6f2f!2sNew%20Delhi%2C%20India!5e0!3m2!1sen!2sin!4v1694444400000!5m2!1sen!2sin"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </section>
+
+      <!-- Right column: Contact Form (spans both rows on desktop) -->
+      <section class="contact-form card" aria-labelledby="contactFormTitle">
+        <h2 id="contactFormTitle">Send a Message</h2>
+
+        <div id="formStatus" class="status" role="status" aria-live="polite"></div>
+
+        <form id="contactForm" novalidate>
+          <!-- Honeypot (anti-spam) -->
+          <input type="text" id="company" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="grid two">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your Name" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="grid two">
+            <div class="form-group">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" pattern="^[0-9+()\-.\s]{7,20}$" autocomplete="tel">
+              <small class="hint">Digits, spaces, +, -, () allowed</small>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="How can we help?" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inquiry">Inquiry Type</label>
+            <select id="inquiry" name="inquiry" required>
+              <option value="" disabled selected>Select a topic</option>
+              <option value="support">Support</option>
+              <option value="sales">Sales</option>
+              <option value="partnership">Partnership</option>
+              <option value="feedback">Feedback</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <fieldset class="form-group">
+            <legend>Preferred Contact Method</legend>
+            <div class="choices">
+              <label><input type="radio" name="preferred" value="email" checked> Email</label>
+              <label><input type="radio" name="preferred" value="phone"> Phone</label>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message..." required minlength="10" maxlength="500" rows="6"></textarea>
+            <div class="char-counter" id="charCounter">0 / 500</div>
+          </div>
+
+          <div class="form-group checkbox">
+            <label>
+              <input type="checkbox" id="consent" name="consent" required>
+              I agree to the <a href="#" target="_blank" rel="noopener">privacy policy</a>.
+            </label>
+          </div>
+
+          <button type="submit" id="submitBtn" class="button primary">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
