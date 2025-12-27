@@ -26,7 +26,6 @@ A modern, responsive “Contact Us” page with a polished UI, dark mode, access
 
 . ├─ index.html # Main page markup ├─ style.css # Theme, layout, components, responsive rules ├─ script.js # Dark mode, form logic, validation, submission └─ assets/ # (optional) Add screenshots here for README
 
-
 ## 🚀 Quick Start
 
 - Open index.html directly in your browser
