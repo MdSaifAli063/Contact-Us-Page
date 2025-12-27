@@ -96,7 +96,6 @@ Mobile order (top → bottom): Get in Touch → Location → Form
 
 ![image](https://github.com/MdSaifAli063/Contact-Us-Page/blob/079dbcc7235fc80e0af0a955931f30e6fb26ca67/Screenshot%202025-09-14%20020123.png)
 
-
 ## 📦 Deployment
 
 - Static hosting works out of the box (no server needed unless you set FORM_ENDPOINT)
