@@ -1,8 +1,6 @@
 'use strict';
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Elements
-  const root = document.documentElement; // <html data-theme="...">
+  const root = document.documentElement;
   const themeToggle = document.getElementById('themeToggle');
   const backToTop = document.getElementById('backToTop');
   const form = document.getElementById('contactForm');
@@ -19,16 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const honeypot = document.getElementById('company');
   const preferredRadios = document.querySelectorAll('input[name="preferred"]');
 
-  // ==============================
-  // Configuration
-  // ==============================
-  // If you have a real endpoint (e.g., Formspree, your backend), set it here.
-  // Example (Formspree): const FORM_ENDPOINT = 'https://formspree.io/f/xxxxxxxx';
-  const FORM_ENDPOINT = ''; // Leave empty to simulate success without network
-
-  // ==============================
-  // Utilities
-  // ==============================
+  const FORM_ENDPOINT = ''; 
   const setStatus = (type, text) => {
     if (!status) return;
     const cls = type === 'success' ? 'alert-success' : 'alert-error';
@@ -48,9 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
 
-  // ==============================
-  // Theme (with persistence)
-  // ==============================
   const savedTheme = localStorage.getItem('theme');
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
@@ -64,17 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyTheme(mode) {
     root.setAttribute('data-theme', mode);
     localStorage.setItem('theme', mode);
-    // Toggle icon
     const icon = themeToggle?.querySelector('i');
     if (icon) icon.className = mode === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    // Update browser UI color
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     if (metaTheme) metaTheme.setAttribute('content', mode === 'dark' ? '#0b1220' : '#4f46e5');
   }
 
-  // ==============================
-  // Back to Top
-  // ==============================
+
   const toggleBackToTop = () => {
     if (!backToTop) return;
     if (window.scrollY > 300) backToTop.classList.add('visible');
@@ -83,10 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleBackToTop();
   window.addEventListener('scroll', toggleBackToTop);
   backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  // ==============================
-  // Character Counter
-  // ==============================
   if (messageEl && charCounter) {
     const maxLen = messageEl.getAttribute('maxlength') ? parseInt(messageEl.getAttribute('maxlength'), 10) : 500;
     const updateCounter = () => {
@@ -96,9 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCounter();
   }
 
-  // ==============================
-  // Persist convenience fields
-  // ==============================
   try {
     const savedName = localStorage.getItem('contact_name');
     const savedEmail = localStorage.getItem('contact_email');
@@ -108,13 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
     nameEl?.addEventListener('change', () => localStorage.setItem('contact_name', nameEl.value.trim()));
     emailEl?.addEventListener('change', () => localStorage.setItem('contact_email', emailEl.value.trim()));
   } catch {
-    // Ignore storage errors (private mode, etc.)
   }
 
-  // ==============================
-  // Dynamic requirements
-  // Make phone required if "Phone" is preferred contact method
-  // ==============================
   const updatePhoneRequirement = () => {
     const preferred = [...preferredRadios].find(r => r.checked)?.value || 'email';
     if (!phoneEl) return;
@@ -129,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
   preferredRadios.forEach(radio => radio.addEventListener('change', updatePhoneRequirement));
   updatePhoneRequirement();
 
-  // Optional: adjust subject placeholder based on inquiry type
   inquiryEl?.addEventListener('change', () => {
     if (!subjectEl) return;
     const map = {
@@ -142,19 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
     subjectEl.placeholder = map[inquiryEl.value] || 'How can we help?';
   });
 
-  // Clear status when user edits fields
   form?.addEventListener('input', clearStatus);
-
-  // ==============================
-  // Form Submission
-  // ==============================
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     clearStatus();
 
-    // Honeypot check (anti-spam)
     if (honeypot && honeypot.value.trim() !== '') {
-      // Intentionally pretend success to bots
       setStatus('success', 'Thanks! Your message has been received.');
       form.reset();
       messageEl && (messageEl.value = '');
@@ -162,9 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Constraint validation
     if (!form.checkValidity()) {
-      // Find first invalid element and focus it
       const firstInvalid = form.querySelector(':invalid');
       if (firstInvalid && firstInvalid.focus) firstInvalid.focus();
       form.reportValidity?.();
@@ -172,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Build payload
     const data = formToJSON(new FormData(form));
 
     try {
@@ -193,12 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
           throw new Error(text || `Request failed (${resp.status})`);
         }
       } else {
-        // Simulate latency + success
         await sleep(1000);
       }
 
       setStatus('success', 'Thank you! Your message has been sent. We’ll get back to you soon.');
-      // Preserve name/email convenience, reset other fields
       const nameVal = nameEl?.value || '';
       const emailVal = emailEl?.value || '';
       form.reset();
@@ -214,13 +171,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ==============================
-  // Helpers
-  // ==============================
   function formToJSON(formData) {
     const obj = {};
     for (const [key, value] of formData.entries()) {
-      // Skip honeypot explicitly if present
       if (key === 'company') continue;
       obj[key] = value;
     }
