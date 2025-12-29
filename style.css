@@ -321,7 +321,6 @@ legend { font-weight: 600; margin-bottom: 0.4rem; }
   box-shadow: 0 0 0 3px var(--ring);
 }
 
-/* Buttons */
 .button {
   display: inline-flex; align-items: center; justify-content: center;
   gap: 0.6rem;
