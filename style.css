@@ -299,7 +299,6 @@ select:invalid {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--danger) 22%, transparent);
 }
 
-/* Radios / choices */
 fieldset { border: 0; padding: 0; margin: 0 0 1rem; }
 legend { font-weight: 600; margin-bottom: 0.4rem; }
 .choices { display: flex; gap: 0.6rem; flex-wrap: wrap; }
