@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (metaTheme) metaTheme.setAttribute('content', mode === 'dark' ? '#0b1220' : '#4f46e5');
   }
 
-
   const toggleBackToTop = () => {
     if (!backToTop) return;
     if (window.scrollY > 300) backToTop.classList.add('visible');
