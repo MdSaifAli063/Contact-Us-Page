@@ -370,7 +370,6 @@ textarea { resize: vertical; }
   margin-top: 0.35rem;
 }
 
-/* Map card and embed */
 .map-embed {
   width: 100%;
   aspect-ratio: 16 / 9; /* mobile/tablet default */
