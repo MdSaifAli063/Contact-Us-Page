@@ -26,7 +26,6 @@ A modern, responsive “Contact Us” page with a polished UI, dark mode, access
 
 . ├─ index.html # Main page markup ├─ style.css # Theme, layout, components, responsive rules ├─ script.js # Dark mode, form logic, validation, submission └─ assets/ # (optional) Add screenshots here for README
 
-
 ## 🚀 Quick Start
 
 - Open index.html directly in your browser
@@ -93,16 +92,9 @@ Mobile order (top → bottom): Get in Touch → Location → Form
 - Google Fonts (Poppins)
 - Normalize.css
 
-## 📸 Screenshots (optional)
+## 📸 Screenshots
 
-Add your screenshots to an assets/ folder and reference them here:
-
-- Light mode
-  - ![Light mode screenshot](assets/screenshot-light.png)
-- Dark mode
-  - ![Dark mode screenshot](assets/screenshot-dark.png)
-- Mobile view
-  - ![Mobile screenshot](assets/screenshot-mobile.png)
+![image](https://github.com/MdSaifAli063/Contact-Us-Page/blob/079dbcc7235fc80e0af0a955931f30e6fb26ca67/Screenshot%202025-09-14%20020123.png)
 
 ## 📦 Deployment
 
