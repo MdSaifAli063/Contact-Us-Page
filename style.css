@@ -292,7 +292,6 @@ select:-webkit-autofill {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-/* Validation states (after user input) */
 input:not(:placeholder-shown):invalid,
 textarea:not(:placeholder-shown):invalid,
 select:invalid {
