@@ -397,7 +397,6 @@ textarea { resize: vertical; }
   .contact-info { overflow: auto; }
 }
 
-/* Back to Top */
 .back-to-top {
   position: fixed; right: 18px; bottom: 18px;
   width: 44px; height: 44px;
