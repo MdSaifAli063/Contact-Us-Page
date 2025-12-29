@@ -145,7 +145,6 @@ a:hover { text-decoration: underline; }
   .contact-form { height: 100%; align-self: stretch; }
 }
 
-/* Left column cards fill their rows */
 .contact-info,
 .map {
   display: flex;
