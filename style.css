@@ -394,7 +394,6 @@ textarea { resize: vertical; }
     width: 100%;
     height: 100%;
   }
-  /* If left content grows too tall, scroll inside Info card */
   .contact-info { overflow: auto; }
 }
 
