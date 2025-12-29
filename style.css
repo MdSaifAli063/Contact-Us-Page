@@ -271,7 +271,6 @@ textarea {
   background: linear-gradient(180deg, #0f172a, rgba(15,23,42,0.85));
 }
 
-/* Hover and focus */
 input:hover,
 select:hover,
 textarea:hover {
@@ -284,7 +283,6 @@ textarea:focus-visible {
   box-shadow: 0 0 0 3px var(--ring);
 }
 
-/* Placeholder and autofill */
 ::placeholder { color: color-mix(in srgb, var(--muted) 80%, transparent); }
 input:-webkit-autofill,
 textarea:-webkit-autofill,
