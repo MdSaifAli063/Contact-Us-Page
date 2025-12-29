@@ -421,7 +421,6 @@ textarea { resize: vertical; }
   box-shadow: 0 0 0 3px var(--ring);
 }
 
-/* Honeypot hidden field */
 .hp {
   position: absolute !important;
   left: -9999px !important;
