@@ -134,8 +134,8 @@ a:hover { text-decoration: underline; }
 
 @media (min-width: 900px) {
   .contact-wrapper {
-    grid-template-columns: 1fr 1fr;         /* equal columns on desktop */
-    grid-template-rows: minmax(0,1fr) minmax(0,1fr); /* equal-height rows on left */
+    grid-template-columns: 1fr 1fr;       
+    grid-template-rows: minmax(0,1fr) minmax(0,1fr); 
     grid-template-areas:
       "info form"
       "map  form";
