@@ -158,7 +158,6 @@ a:hover { text-decoration: underline; }
   font-size: 1.25rem;
 }
 
-/* Contact Info */
 .info-item {
   display: grid;
   grid-template-columns: 24px 1fr;
@@ -210,7 +209,6 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 0 0 3px var(--ring) inset, 0 0 0 3px var(--ring);
 }
 
-/* Form */
 .contact-form h2 { margin: 0 0 0.5rem; font-size: 1.25rem; }
 
 .status {
