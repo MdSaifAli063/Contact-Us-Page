@@ -362,7 +362,6 @@ legend { font-weight: 600; margin-bottom: 0.4rem; }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* Message field */
 textarea { resize: vertical; }
 .char-counter {
   display: flex; justify-content: flex-end;
