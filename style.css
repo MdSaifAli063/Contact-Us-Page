@@ -119,7 +119,6 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 16px 40px rgba(0,0,0,0.45);
 }
 
-/* Grid Layout: info (top-left) → map (bottom-left) → form (right, spans) */
 .contact-wrapper {
   display: grid;
   grid-template-columns: 1fr;               /* mobile: single column */
