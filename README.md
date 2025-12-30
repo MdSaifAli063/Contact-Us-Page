@@ -43,7 +43,6 @@ A modern, responsive “Contact Us” page with a polished UI, dark mode, access
     - Location card (Google Maps embed), same width, equal height with Get in Touch on desktop
   - Right Column
     - Contact Form card spanning both rows (matches combined left height)
-
 Mobile order (top → bottom): Get in Touch → Location → Form
 
 ## ⚙️ Configuration
